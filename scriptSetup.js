@@ -18,7 +18,6 @@ let setupScript = async () => {
     const pressBoxOptionDelete = async () => {
         await setTimeout(async () => {
             boxOptions = document.querySelectorAll("[role='option'][tabindex='0'][aria-disabled='false']")
-            console.log(boxOptions)
             if (boxOptions.length > 1 && boxOptions) {
                 await boxOptions[1].click()
             } else if (boxOptions) {
@@ -32,7 +31,6 @@ let setupScript = async () => {
     const pressDeleteButtonOnModal = async () => {
         await setTimeout(async () => {
             deleteButtonOnModal = document.querySelector("[id='button'][class='style-scope yt-button-renderer style-text size-default'][role='button'][tabindex='0'][animated=''][elevation='0'][aria-disabled='false'][aria-label='Delete']")
-            console.log(deleteButtonOnModal)
             if (deleteButtonOnModal) {
                 await deleteButtonOnModal.click()
             }
