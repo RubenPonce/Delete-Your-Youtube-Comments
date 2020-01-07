@@ -6,5 +6,7 @@ Go to this url to view your comment history: https://www.youtube.com/feed/histor
   Simply copy and paste the script in your dev tools and sit back as your comments dissolve into thin air!
 
 <aside class="warning">
+  
 Warning: This will permanently delete all your youtube comments once you run it with zero discrimination.
+
 </aside>
