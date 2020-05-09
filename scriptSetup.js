@@ -30,7 +30,7 @@ let setupScript = async () => {
 
     const pressDeleteButtonOnModal = async () => {
         await setTimeout(async () => {
-            deleteButtonOnModal = document.querySelector("[id='button'][class='style-scope yt-button-renderer style-text size-default'][role='button'][tabindex='0'][animated=''][elevation='0'][aria-disabled='false'][aria-label='Delete']")
+            deleteButtonOnModal = document.querySelector("[id='button'][class='style-scope yt-button-renderer style-primary size-default'][role='button'][tabindex='0'][animated=''][elevation='0'][aria-disabled='false'][aria-label='Delete']")
             if (deleteButtonOnModal) {
                 await deleteButtonOnModal.click()
             }
