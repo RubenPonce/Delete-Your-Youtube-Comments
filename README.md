@@ -4,7 +4,7 @@ Youtube doesn't provide a way to delete all your comments, so I made one! This w
 ## How to use the script: 
   1. Copy scriptSetup.js 
   2. Open your [comment history](https://www.youtube.com/feed/history/comment_history)
-  3. Paste the code into your Google Chrome Dev Tools console 
+  3. Paste the code into your Google Chrome Dev Tools console on the comment history page
   4. Sit back as your comments dissolve into thin air! 
   
 ### working as of July 4th 2020.
