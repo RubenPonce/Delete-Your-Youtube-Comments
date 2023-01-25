@@ -1,44 +1,22 @@
-let menuBoxCounter = 8 //+9
-let menuCounter = 0
+let sleep = time => new Promise(res => setTimeout(res, time, "done sleeping"));
 
-let setupScript = async () => {
-    let boxes = document.querySelectorAll(".style-scope .ytd-comment-history-entry-renderer")
-    let boxOptions = document.querySelectorAll("[role='option'][tabindex='0'][aria-disabled='false']")
-    let menuBoxes = document.querySelectorAll("[aria-label='Action menu']")
-    let deleteButtonOnModal = document.querySelector("[id='button'][class='style-scope yt-button-renderer style-text size-default'][role='button'][tabindex='0'][animated=''][elevation='0'][aria-disabled='false'][aria-label='Delete']")
-
-    const pressMenu = async () => {
-        await boxes[menuBoxCounter].setAttribute("menu-active", true)
-        setTimeout(() => null, 100)
-        await menuBoxes[menuCounter].click()
-        menuBoxCounter += 9
-        menuCounter += 1
-    }
-
-    const pressBoxOptionDelete = async () => {
-        await setTimeout(async () => {
-            boxOptions = document.querySelectorAll("[role='option'][tabindex='0'][aria-disabled='false']")
-            if (boxOptions.length > 1 && boxOptions) {
-                await boxOptions[1].click()
-            } else if (boxOptions) {
-
-                await boxOptions[0].click()
-            }
-        }, 100)
-
-    }
-
-    const pressDeleteButtonOnModal = async () => {
-        await setTimeout(async () => {
-            deleteButtonOnModal = document.querySelector("[id='button'][class='style-scope yt-button-renderer style-primary size-default'][role='button'][tabindex='0'][animated=''][elevation='0'][aria-disabled='false'][aria-label='Delete']")
-            if (deleteButtonOnModal) {
-                await deleteButtonOnModal.click()
-            }
-        }, 100)
-
-    }
-
-    await Promise.all([pressMenu(), pressBoxOptionDelete(), pressDeleteButtonOnModal()])
+async function work() {
+  let buttons = [...document.querySelectorAll("c-wiz .GqCJpe.u2cbPc.LDk2Pd .VfPpkd-Bz112c-LgbsSe.yHy1rc.eT1oJ.mN1ivc")];
+  console.log("Deleting " + buttons.length + " comments");
+	for (let b of buttons) {
+    console.log("Hit");
+    b.click();
+    await sleep(2000);
+  }
+  console.log("End. Scrolling...")
+  window.scrollTo(0, document.body.scrollHeight);
 }
 
-window.setInterval(setupScript, 400)
+async function run() {
+  while (true) {
+    await work();
+    await sleep(10000);
+  }
+}
+
+run();
