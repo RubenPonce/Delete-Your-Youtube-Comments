@@ -1,3 +1,4 @@
+No longer maintained
 ## How to use the script: 
   1. Copy scriptSetup.js 
   2. Open your [comment history](https://www.youtube.com/feed/history/comment_history)
